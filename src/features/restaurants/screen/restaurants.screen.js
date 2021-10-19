@@ -11,15 +11,12 @@ const SafeArea = styled(SafeAreaView)`
 `;
 
 const SearchContainer = styled.View`
-  padding: 16px;
-  color: yellow;
-  /* color: ${(props) => props.theme.colors.ui.error}; */
+  padding: ${(props) => props.theme.space[3]};
 `;
 
 const RestaurantListContainer = styled.View`
   flex: 1;
-  padding: 16px;
-  background-color: blue;
+  padding: ${(props) => props.theme.space[3]};
 `;
 export const RestaurantsScreen = () => (
   <SafeArea>
