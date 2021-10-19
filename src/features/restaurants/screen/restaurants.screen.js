@@ -6,11 +6,12 @@ import { RestaurantInfoCard } from "../componets/restaurant-info-card.component"
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
-  margin-top: ${StatusBar.currentHeight}px;
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`}
 `;
 
 const SearchContainer = styled.View`
   padding: 16px;
+  color: ${(props) => props.theme.colors.ui.error};
 `;
 
 const RestaurantListContainer = styled.View`
