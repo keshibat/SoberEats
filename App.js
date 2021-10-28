@@ -16,6 +16,7 @@ import { theme } from "./src/infrastructure/theme";
 import { RestaurantsScreen } from "./src/features/restaurants/screen/restaurants.screen";
 import { SafeArea } from "./src/components/utility/safe-area.component";
 import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
+
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
@@ -35,10 +36,6 @@ const Map = () => (
   </SafeArea>
 );
 
-const tabBarIcon = ({ size, color }) => (
-  <Ionicons name={"iconName"} size={size} color={color} />
-);
-
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];
   return {
@@ -52,6 +49,7 @@ export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
   });
+
   const [latoLoaded] = useLato({
     Lato_400Regular,
   });
@@ -67,9 +65,16 @@ export default function App() {
           <NavigationContainer>
             <Tab.Navigator
               screenOptions={createScreenOptions}
-              tabBarOptions={{
-                activeTintColor: "tomato",
-                inactiveTintColor: "gray",
+              // eslint-disable-next-line react/jsx-no-duplicate-props
+              screenOptions={{
+                tabBarActiveTintColor: "tomato",
+                tabBarInactiveTintColor: "gray",
+                tabBarStyle: [
+                  {
+                    display: "flex",
+                  },
+                  null,
+                ],
               }}
             >
               <Tab.Screen name="Restaurants" component={RestaurantsScreen} />
