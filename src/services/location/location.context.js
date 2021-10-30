@@ -4,15 +4,15 @@ import { locationRequest, locationTransform } from "./location.service";
 export const LocationContext = createContext();
 
 export const LocationContextProvider = ({ children }) => {
-  const [keyword, setKeyword] = useState("Antwerp");
+  const [keyword, setKeyword] = useState("san francisco");
   const [location, setLocation] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const onSerach = (searchKeyword) => {
+  const onSearch = (searchKeyword) => {
     setIsLoading(true);
-    setKeyword(searchKeyword.toLowerCase());
-    locationRequest(searchKeyword)
+    setKeyword(searchKeyword);
+    locationRequest(searchKeyword.toLowerCase())
       .then(locationTransform)
       .then((result) => {
         setIsLoading(false);
@@ -30,7 +30,7 @@ export const LocationContextProvider = ({ children }) => {
         isLoading,
         error,
         location,
-        search: () => null,
+        search: onSearch,
         keyword,
       }}
     >
