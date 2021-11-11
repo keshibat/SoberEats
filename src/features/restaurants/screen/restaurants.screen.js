@@ -8,7 +8,6 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
-
 import { Search } from "../componets/search.component";
 import { RestaurantInfoCard } from "../componets/restaurant-info-card.component";
 
@@ -31,7 +30,6 @@ const LoadingContainer = styled.View`
 export const RestaurantsScreen = ({ navigation }) => {
   const { isLoading, restaurants } = useContext(RestaurantsContext);
 
-
   return (
     <SafeArea>
       {isLoading && (
@@ -46,7 +44,7 @@ export const RestaurantsScreen = ({ navigation }) => {
           return (
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("RestaurantsDetail", {
+                navigation.navigate("RestaurantDetail", {
                   restaurant: item,
                 })
               }
