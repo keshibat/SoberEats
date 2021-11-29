@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components/native";
 
 const defaultTextStyles = (theme) => `
@@ -40,7 +41,6 @@ const variants = {
   hint,
 };
 
-// <Text variant="something" />
 export const Text = styled.Text`
   ${({ theme }) => defaultTextStyles(theme)}
   ${({ variant, theme }) => variants[variant](theme)}
