@@ -21,12 +21,12 @@ export const LoginScreen = ({ navigation }) => {
   return (
     <AccountBackground>
       <AccountCover />
-      <Title>Sober Eats</Title>
+      <Title>Meals To Go</Title>
       <AccountContainer>
         <AuthInput
           label="E-mail"
           value={email}
-          textContextType="emailAddress"
+          textContentType="emailAddress"
           keyboardType="email-address"
           autoCapitalize="none"
           onChangeText={(u) => setEmail(u)}
@@ -35,7 +35,7 @@ export const LoginScreen = ({ navigation }) => {
           <AuthInput
             label="Password"
             value={password}
-            textContextType="password"
+            textContentType="password"
             secureTextEntry
             autoCapitalize="none"
             secure
@@ -43,11 +43,9 @@ export const LoginScreen = ({ navigation }) => {
           />
         </Spacer>
         {error && (
-          <Spacer size="large">
-            <ErrorContainer size="large">
-              <Text variant="error">{error}</Text>
-            </ErrorContainer>
-          </Spacer>
+          <ErrorContainer size="large">
+            <Text variant="error">{error}</Text>
+          </ErrorContainer>
         )}
         <Spacer size="large">
           <AuthButton
