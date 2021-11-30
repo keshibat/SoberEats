@@ -8,7 +8,6 @@ import { SafeArea } from "../../components/utility/safe-area.component";
 import { RestaurantsNavigator } from "./restaurants.navigator";
 import { MapScreen } from "../../features/map/screens/map.screen";
 import { AuthenticationContext } from "../../services/authentication/authentication.context";
-
 const Tab = createBottomTabNavigator();
 
 const TAB_ICON = {
@@ -42,7 +41,7 @@ export const AppNavigator = () => (
     screenOptions={{
       tabBarActiveTintColor: "tomato",
       tabBarInactiveTintColor: "gray",
-      headerShown: false,
+      // headerShown: false,
     }}
   >
     <Tab.Screen name="Restaurants" component={RestaurantsNavigator} />
